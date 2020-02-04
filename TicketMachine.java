@@ -9,7 +9,7 @@
  * @author David J. Barnes and Michael Kolling
  * @version 2008.03.30
  */
-public class TicketMachine
+ class TicketMachine
 {
     // The price of a ticket from this machine.
     private Integer price;
@@ -19,6 +19,8 @@ public class TicketMachine
     private Integer total;
     // The number of tickets printed.
     private Integer ticketNumber;
+
+    private Integer status;
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -40,7 +42,7 @@ public class TicketMachine
     {
         return price;
     }
-    
+
     /**
      * Return ticketNumber.
      * (Increments on each print.)
@@ -67,17 +69,17 @@ public class TicketMachine
         balance = balance + amount;
         return balance;
     }
-    
+
     public Integer calculateTotal(){
         total = balance + total;
         return total;
     }
-    
+
     public Integer incrementTicketNumber(){
         ticketNumber++;
         return ticketNumber;
     }
-    
+
 
     /**
      * Print a ticket.
@@ -92,7 +94,7 @@ public class TicketMachine
         total = total + balance;
         // Clear the balance.
         balance = 0;
-        
+
         return "Ticket price: " + price + " cents. " + "Your total is " + total + ".";
     }
 }
